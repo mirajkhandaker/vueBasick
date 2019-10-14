@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue From Scratch</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="todo in items">
+                {{todo.text}} <span v-if="todo.checked">checked</span>
+                <button @click="todo.checked = ! todo.checked">Checked</button>
+            </li>
+        </ul>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+
+        data:{
+            items:[
+                {text:"item1",checked:true},
+                {text:"item2",checked:false},
+                {text:"item3",checked:true},
+            ]
+        }
+    });
+</script>
+</body>
+</html>
